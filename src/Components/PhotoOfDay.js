@@ -3,6 +3,7 @@ import axios from "axios";
 
 function PhotoOfDay(){
     const [photo, setPhoto] = useState('')
+    const [date, setDate] = useState();
  
     useEffect(() => {
     axios
@@ -10,6 +11,7 @@ function PhotoOfDay(){
        .then(response => {
            console.log(response.data)
            setPhoto(response.data.hdurl)
+           setDate(response.data.date);
        })
        .catch(err => {
          console.log(err)
@@ -18,7 +20,8 @@ function PhotoOfDay(){
   
       return(
           <div>
-              <img src={photo} />
+              <img src={photo} alt="NASA image of the day" />
+              <p>Date: {date}</p>
           </div>
       )
 }
