@@ -27,7 +27,7 @@ function PhotoOfDay() {
         <div className="dataContainer">
             <img src={photo} alt="NASA image of the day" />
             <h2>{title}</h2>
-            <p><span>Date:</span> {date}</p>
+            <p className="date"><span>Date:</span> {date}</p>
             <p className="explanation"><span>Explanation:</span> {explanation}</p>
         </div>
     )
