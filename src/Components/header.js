@@ -1,7 +1,13 @@
 import React from "react";
+import styled from "styled-components";
+
+const HeaderH1 = styled.h1`
+    font-size: 3em;
+    margin: 20px auto;
+`
 
 export default function Header(){
     return(
-        <h1 className="header">NASA Photo of the Day</h1>
+        <HeaderH1>NASA Photo of the Day</HeaderH1>
     )
 }
