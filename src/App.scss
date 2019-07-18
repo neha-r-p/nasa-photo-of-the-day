@@ -1,5 +1,19 @@
 .App {
   text-align: center;
+
+  .header {
+    font-size: 3em;
+    margin: 20px auto;
+  }
+
+  .dataContainer{
+    width: 80%;
+    margin:0 auto;
+
+    img{
+      width: 50%;
+    }
+  }
 }
 
 .App-logo {
@@ -30,8 +44,4 @@
   to {
     transform: rotate(360deg);
   }
-}
-
-img{
-  width: 50%;
 }
