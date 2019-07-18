@@ -5,6 +5,7 @@ function PhotoOfDay(){
     const [photo, setPhoto] = useState('')
     const [title, setTitle] = useState();
     const [date, setDate] = useState();
+    const [explanation, setExplanation] = useState();
  
     useEffect(() => {
     axios
@@ -14,6 +15,8 @@ function PhotoOfDay(){
            setPhoto(response.data.hdurl)
            setTitle(response.data.title)
            setDate(response.data.date);
+           setExplanation(response.data.explanation);
+
        })
        .catch(err => {
          console.log(err)
@@ -25,6 +28,7 @@ function PhotoOfDay(){
               <img src={photo} alt="NASA image of the day" />
               <h2>{title}</h2>
               <p>Date: {date}</p>
+              <p>Explanation: {explanation}</p>
           </div>
       )
 }
