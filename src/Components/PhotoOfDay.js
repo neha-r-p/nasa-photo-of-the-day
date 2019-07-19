@@ -14,6 +14,15 @@ const DataContainerDiv = styled.div`
 
 const NasaImg = styled.img `
     width: 80%;
+    margin-top: 20px;
+`
+const ExplanationP = styled.p `
+    text-align: left;
+    margin: 0 30px 10px;
+`
+const SubtitleSpan = styled.span `
+    font-weight: bolder;
+    font-size: 1.2em;
 `
 
 function PhotoOfDay() {
@@ -42,8 +51,8 @@ function PhotoOfDay() {
         <DataContainerDiv>
             <NasaImg src={photo} alt="NASA image of the day" />
             <h2>{title}</h2>
-            <p className="date"><span>Date:</span> {date}</p>
-            <p className="explanation"><span>Explanation:</span> {explanation}</p>
+            <p><SubtitleSpan>Date:</SubtitleSpan> {date}</p>
+            <ExplanationP><SubtitleSpan>Explanation:</SubtitleSpan> <br />{explanation}</ExplanationP>
         </DataContainerDiv>
     )
 }
