@@ -1,5 +1,29 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import styled from "styled-components"
+
+const DataContainerDiv = styled.div`
+    margin: 20px auto;
+    color: navy;
+    max-width: 800px;
+    box-sizing: border-box;
+    background: white;
+    border-radius: 20px;
+    padding:20px 0;
+`;
+
+const NasaImg = styled.img `
+    width: 80%;
+    margin-top: 20px;
+`
+const ExplanationP = styled.p `
+    text-align: left;
+    margin: 0 30px 10px;
+`
+const SubtitleSpan = styled.span `
+    font-weight: bolder;
+    font-size: 1.2em;
+`
 
 function PhotoOfDay() {
     const [photo, setPhoto] = useState('')
@@ -24,12 +48,12 @@ function PhotoOfDay() {
     }, [])
 
     return (
-        <div className="dataContainer">
-            <img src={photo} alt="NASA image of the day" />
+        <DataContainerDiv>
+            <NasaImg src={photo} alt="NASA image of the day" />
             <h2>{title}</h2>
-            <p className="date"><span>Date:</span> {date}</p>
-            <p className="explanation"><span>Explanation:</span> {explanation}</p>
-        </div>
+            <p><SubtitleSpan>Date:</SubtitleSpan> {date}</p>
+            <ExplanationP><SubtitleSpan>Explanation:</SubtitleSpan> <br />{explanation}</ExplanationP>
+        </DataContainerDiv>
     )
 }
 
